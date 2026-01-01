@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load course_filters %}
+
+{% block title %}{% trans "Courses" %} - Django Master{% endblock %}
+
+{% block content %}
+
+<div class="course-list-page">
+    <!-- Enhanced Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">{% trans "Django Learning Platform" %}</h1>
+                <p class="hero-subtitle">{% trans "Master Django Web Development for Windows & Mac" %}</p>
+                <div class="hero-stats"
+                    style="display: flex; justify-content: center; gap: var(--space-8); margin-top: var(--space-8);">
+                    <div class="stat-item" style="text-align: center;">
+                        <i class="fas fa-book"
+                            style="font-size: 2rem; color: var(--primary-color); margin-bottom: var(--space-2);"></i>
+                        <div style="font-weight: 700; font-size: 1.5rem;">{{ total_courses }}</div>
+                        <div style="color: var(--text-secondary);">{% trans "Courses" %}</div>
+                    </div>
+                    <div class="stat-item" style="text-align: center;">
+                        <i class="fas fa-laptop-code"
+                            style="font-size: 2rem; color: var(--secondary-color); margin-bottom: var(--space-2);"></i>
+                        <div style="font-weight: 700; font-size: 1.5rem;">{% trans "Multi-Platform" %}</div>
+                        <div style="color: var(--text-secondary);">{% trans "Windows & Mac" %}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Mac Courses Section -->
+        {% if mac_courses %}
+        <section class="platform-section mac-section" style="margin-bottom: var(--space-12);">
+            <div class="platform-header"
+                style="display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-6);">
+                <div class="platform-icon mac-icon"
+                    style="background: rgba(0,0,0,0.1); width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <i class="fab fa-apple" style="font-size: 1.5rem;"></i>
+                </div>
+                <div>
+                    <h2 style="margin: 0; font-size: 1.5rem;">{% trans "Mac Courses" %}</h2>
+                    <p style="margin: 0; color: var(--text-secondary);">{% trans "Optimized for macOS environment" %}
+                    </p>
+                </div>
+            </div>
+
+            <div class="courses-grid">
+                {% for course in mac_courses %}
+                <div class="course-card mac-card">
+                    <div class="course-badge mac-badge">
+                        <i class="fab fa-apple"></i> Mac
+                    </div>
+                    <div class="course-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h2>{{ course|get_translated:lang }}</h2>
+                    <p>{% if lang == 'fa' %}{{ course.description_fa|truncatewords:20 }}{% else %}{{ course.description_en|truncatewords:20 }}{% endif %}</p>
+                    <div class="course-footer" style="margin-top: auto;">
+                        <a href="{% url 'course_detail' course.slug %}" class="btn btn-primary" style="width: 100%;">
+                            {% trans "Start Learning" %} <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        <!-- Windows Courses Section -->
+        {% if windows_courses %}
+        <section class="platform-section windows-section" style="margin-bottom: var(--space-12);">
+            <div class="platform-header"
+                style="display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-6);">
+                <div class="platform-icon windows-icon"
+                    style="background: rgba(0, 120, 215, 0.1); color: #0078d7; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <i class="fab fa-windows" style="font-size: 1.5rem;"></i>
+                </div>
+                <div>
+                    <h2 style="margin: 0; font-size: 1.5rem;">{% trans "Windows Courses" %}</h2>
+                    <p style="margin: 0; color: var(--text-secondary);">{% trans "Optimized for Windows environment" %}
+                    </p>
+                </div>
+            </div>
+
+            <div class="courses-grid">
+                {% for course in windows_courses %}
+                <div class="course-card windows-card">
+                    <div class="course-badge windows-badge">
+                        <i class="fab fa-windows"></i> Windows
+                    </div>
+                    <div class="course-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h2>{{ course|get_translated:lang }}</h2>
+                    <p>{% if lang == 'fa' %}{{ course.description_fa|truncatewords:20 }}{% else %}{{ course.description_en|truncatewords:20 }}{% endif %}</p>
+                    <div class="course-footer" style="margin-top: auto;">
+                        <a href="{% url 'course_detail' course.slug %}" class="btn btn-primary" style="width: 100%;">
+                            {% trans "Start Learning" %} <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        <!-- All Platforms Courses Section -->
+        {% if all_platforms_courses %}
+        <section class="platform-section all-platforms-section" style="margin-bottom: var(--space-12);">
+            <div class="platform-header"
+                style="display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-6);">
+                <div class="platform-icon all-icon"
+                    style="background: var(--primary-soft); width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-globe" style="font-size: 1.5rem; color: var(--primary-color);"></i>
+                </div>
+                <div>
+                    <h2 style="margin: 0; font-size: 1.5rem;">{% trans "All Platforms" %}</h2>
+                    <p style="margin: 0; color: var(--text-secondary);">{% trans "Universal Django courses" %}</p>
+                </div>
+            </div>
+
+            <div class="courses-grid">
+                {% for course in all_platforms_courses %}
+                <div class="course-card all-card">
+                    <div class="course-badge all-badge">
+                        <i class="fas fa-globe"></i> Global
+                    </div>
+                    <div class="course-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h2>{{ course|get_translated:lang }}</h2>
+                    <p>{% if lang == 'fa' %}{{ course.description_fa|truncatewords:20 }}{% else %}{{ course.description_en|truncatewords:20 }}{% endif %}</p>
+                    <div class="course-footer" style="margin-top: auto;">
+                        <a href="{% url 'course_detail' course.slug %}" class="btn btn-primary" style="width: 100%;">
+                            {% trans "Start Learning" %} <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        <!-- Empty State -->
+        {% if not mac_courses and not windows_courses and not all_platforms_courses %}
+        <div class="empty-state"
+            style="text-align: center; padding: 4rem 2rem; background: var(--bg-card); border-radius: var(--radius-lg); border: 2px dashed var(--border-color);">
+            <i class="fas fa-book-open"
+                style="font-size: 4rem; color: var(--text-tertiary); margin-bottom: var(--space-4);"></i>
+            <h3 style="color: var(--text-secondary);">{% trans "No courses available yet." %}</h3>
+            <p style="color: var(--text-tertiary);">{% trans "Check back soon for new content!" %}</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

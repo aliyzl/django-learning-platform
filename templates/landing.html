@@ -1,0 +1,482 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans "Learn Django Framework - Complete Guide" %} - Django Master{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/landing.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="landing-page">
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="hero-background">
+            <div class="hero-gradient"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fab fa-python"></i>
+                    <span>{% trans "Python Web Framework" %}</span>
+                </div>
+                <h1 class="hero-title">
+                    {% trans "Master Django Framework" %}
+                </h1>
+                <p class="hero-subtitle">
+                    {% trans "The high-level Python web framework that encourages rapid development and clean, pragmatic design. Learn Django from scratch and build powerful web applications." %}
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="stat-number">{{ total_courses }}</div>
+                        <div class="stat-label">{% trans "Courses" %}</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <div class="stat-number">{{ total_sections }}</div>
+                        <div class="stat-label">{% trans "Sections" %}</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="stat-number">{{ total_lessons }}</div>
+                        <div class="stat-label">{% trans "Lessons" %}</div>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="{% url 'course_list' %}" class="btn btn-primary btn-large">
+                        <span>{% trans "Start Learning Now" %}</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#architecture" class="btn btn-secondary btn-large">
+                        <span>{% trans "Explore Architecture" %}</span>
+                        <i class="fas fa-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- What is Django Section -->
+    <section class="what-is-django section-padding" id="what-is-django">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{% trans "What is Django?" %}</h2>
+                <p class="section-description">
+                    {% trans "Django is a high-level Python web framework that enables rapid development of secure and maintainable websites. Built by experienced developers, Django takes care of much of the hassle of web development, so you can focus on writing your app without needing to reinvent the wheel." %}
+                </p>
+            </div>
+            <div class="django-highlights">
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>{% trans "Batteries Included" %}</h3>
+                    <p>{% trans "Django includes dozens of extras you can use to handle common web development tasks, from user authentication to RSS feeds." %}</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>{% trans "Security First" %}</h3>
+                    <p>{% trans "Django helps developers avoid many common security mistakes by providing a framework that has been engineered to 'do the right things' to protect the website automatically." %}</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>{% trans "Scalable" %}</h3>
+                    <p>{% trans "Some of the busiest sites on the web leverage Django's ability to quickly and flexibly scale to meet the heaviest traffic demands." %}</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>{% trans "Thriving Community" %}</h3>
+                    <p>{% trans "Django has a large and active community with extensive documentation, packages, and support for developers of all levels." %}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Diagram Section -->
+    <section class="architecture-section section-padding" id="architecture">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{% trans "Django Architecture" %}</h2>
+                <p class="section-description">
+                    {% trans "Django follows the Model-View-Template (MVT) architectural pattern. Explore the interactive diagram below to understand how Django processes requests and responses." %}
+                </p>
+            </div>
+            
+            <!-- Flow Controls -->
+            <div class="flow-controls">
+                <button class="btn-flow-control" id="play-pause-btn" aria-label="{% trans 'Play/Pause Animation' %}">
+                    <i class="fas fa-play"></i>
+                    <span>{% trans "Play Flow" %}</span>
+                </button>
+                <button class="btn-flow-control" id="prev-step-btn" aria-label="{% trans 'Previous Step' %}">
+                    <i class="fas fa-chevron-left"></i>
+                    <span>{% trans "Previous" %}</span>
+                </button>
+                <button class="btn-flow-control" id="next-step-btn" aria-label="{% trans 'Next Step' %}">
+                    <span>{% trans "Next" %}</span>
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <button class="btn-flow-control" id="reset-btn" aria-label="{% trans 'Reset Animation' %}">
+                    <i class="fas fa-redo"></i>
+                    <span>{% trans "Reset" %}</span>
+                </button>
+            </div>
+
+            <!-- Step Indicator -->
+            <div class="step-indicator">
+                <div class="step-progress" id="step-progress"></div>
+                <div class="step-info">
+                    <span class="step-current" id="step-current">0</span>
+                    <span class="step-separator">/</span>
+                    <span class="step-total" id="step-total">8</span>
+                </div>
+            </div>
+
+            <div class="architecture-diagram" id="architecture-diagram">
+                <!-- Flow Diagram SVG Container -->
+                <div class="flow-diagram-container">
+                    <svg class="flow-diagram-svg" id="flow-svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid meet">
+                        <!-- Flow Paths will be drawn here by JavaScript -->
+                        <defs>
+                            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                <polygon points="0 0, 10 3, 0 6" fill="var(--primary-color)" />
+                            </marker>
+                            <filter id="glow">
+                                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                    </svg>
+                </div>
+
+                <!-- MVT Architecture Components -->
+                <div class="mvt-diagram">
+                    <!-- Request Phase -->
+                    <div class="flow-phase request-phase">
+                        <h4 class="phase-title">{% trans "Request Phase" %}</h4>
+                        <div class="phase-components">
+                            <!-- HTTP Request -->
+                            <div class="flow-component http-request" data-component="http-request" data-step="1">
+                                <div class="component-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <h5>{% trans "HTTP Request" %}</h5>
+                                <p>{% trans "Browser Request" %}</p>
+                            </div>
+
+                            <!-- URL Routing -->
+                            <div class="flow-component url-routing" data-component="url" data-step="2">
+                                <div class="component-icon">
+                                    <i class="fas fa-route"></i>
+                                </div>
+                                <h5>{% trans "URL Routing" %}</h5>
+                                <p>{% trans "urls.py" %}</p>
+                            </div>
+
+                            <!-- Middleware -->
+                            <div class="flow-component middleware" data-component="middleware" data-step="3">
+                                <div class="component-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <h5>{% trans "Middleware" %}</h5>
+                                <p>{% trans "Request Processing" %}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MVT Core Components -->
+                    <div class="flow-phase mvt-phase">
+                        <h4 class="phase-title">{% trans "MVT Pattern" %}</h4>
+                        <div class="mvt-core">
+                            <!-- View -->
+                            <div class="flow-component view" data-component="views" data-step="4">
+                                <div class="component-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <h5>{% trans "View" %}</h5>
+                                <p>{% trans "Business Logic" %}</p>
+                            </div>
+
+                            <!-- Model -->
+                            <div class="flow-component model" data-component="models" data-step="5">
+                                <div class="component-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <h5>{% trans "Model" %}</h5>
+                                <p>{% trans "ORM & Database" %}</p>
+                            </div>
+
+                            <!-- Template -->
+                            <div class="flow-component template" data-component="templates" data-step="6">
+                                <div class="component-icon">
+                                    <i class="fas fa-file-code"></i>
+                                </div>
+                                <h5>{% trans "Template" %}</h5>
+                                <p>{% trans "Presentation" %}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Response Phase -->
+                    <div class="flow-phase response-phase">
+                        <h4 class="phase-title">{% trans "Response Phase" %}</h4>
+                        <div class="phase-components">
+                            <!-- Context -->
+                            <div class="flow-component context" data-component="context" data-step="7">
+                                <div class="component-icon">
+                                    <i class="fas fa-box"></i>
+                                </div>
+                                <h5>{% trans "Context" %}</h5>
+                                <p>{% trans "Data Binding" %}</p>
+                            </div>
+
+                            <!-- HTTP Response -->
+                            <div class="flow-component http-response" data-component="http-response" data-step="8">
+                                <div class="component-icon">
+                                    <i class="fas fa-paper-plane"></i>
+                                </div>
+                                <h5>{% trans "HTTP Response" %}</h5>
+                                <p>{% trans "Rendered HTML" %}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Component Info Panel -->
+                <div class="component-info-panel" id="component-info">
+                    <button class="info-close" id="info-close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="info-content" id="info-content">
+                        <div class="info-icon" id="info-icon"></div>
+                        <h3 class="info-title" id="info-title"></h3>
+                        <p class="info-description" id="info-description"></p>
+                        <div class="info-flow-position" id="info-flow-position"></div>
+                        <div class="info-relationships" id="info-relationships"></div>
+                        <div class="info-code-example" id="info-code-example"></div>
+                        <div class="info-features" id="info-features"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="features-section section-padding" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{% trans "Key Features" %}</h2>
+                <p class="section-description">
+                    {% trans "Django provides a comprehensive set of features that make web development efficient and enjoyable." %}
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>{% trans "ORM" %}</h3>
+                    <p>{% trans "Object-Relational Mapping allows you to interact with databases using Python code instead of SQL. Define models and Django handles the database operations." %}</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>{% trans "Admin Interface" %}</h3>
+                    <p>{% trans "Django automatically generates a production-ready admin interface for your models, allowing you to manage content without writing any additional code." %}</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-lock"></i>
+                    </div>
+                    <h3>{% trans "Authentication & Authorization" %}</h3>
+                    <p>{% trans "Built-in user authentication system handles user accounts, groups, permissions, and cookie-based user sessions out of the box." %}</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <h3>{% trans "Security Features" %}</h3>
+                    <p>{% trans "Protection against SQL injection, XSS attacks, CSRF, clickjacking, and other common security vulnerabilities is built-in." %}</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </div>
+                    <h3>{% trans "Scalability" %}</h3>
+                    <p>{% trans "Django is designed to help developers take applications from concept to completion as quickly as possible, and scale to handle high traffic." %}</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>{% trans "Template Engine" %}</h3>
+                    <p>{% trans "Powerful template system that allows you to separate design from code, making it easy to create dynamic HTML pages." %}</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>{% trans "URL Routing" %}</h3>
+                    <p>{% trans "Clean, elegant URL scheme is an important detail in a high-quality web application. Django encourages beautiful URL design." %}</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3>{% trans "Extensibility" %}</h3>
+                    <p>{% trans "Django's app architecture allows you to build reusable apps and leverage thousands of third-party packages from the Django ecosystem." %}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section section-padding" id="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{% trans "Why Learn Django?" %}</h2>
+                <p class="section-description">
+                    {% trans "Django is one of the most popular and in-demand web frameworks in the industry. Here's why it's worth learning." %}
+                </p>
+            </div>
+            <div class="benefits-content">
+                <div class="benefit-item">
+                    <div class="benefit-number">01</div>
+                    <div class="benefit-text">
+                        <h3>{% trans "Industry Standard" %}</h3>
+                        <p>{% trans "Used by major companies like Instagram, Spotify, Pinterest, and The Washington Post. Django powers some of the world's largest websites." %}</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">02</div>
+                    <div class="benefit-text">
+                        <h3>{% trans "Career Opportunities" %}</h3>
+                        <p>{% trans "Django developers are in high demand. Learning Django opens up numerous job opportunities in web development, backend engineering, and full-stack development." %}</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">03</div>
+                    <div class="benefit-text">
+                        <h3>{% trans "Rapid Development" %}</h3>
+                        <p>{% trans "Django's 'batteries included' philosophy means you can build production-ready applications faster than with many other frameworks." %}</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">04</div>
+                    <div class="benefit-text">
+                        <h3>{% trans "Python Ecosystem" %}</h3>
+                        <p>{% trans "Built on Python, one of the most popular and beginner-friendly programming languages, making it accessible to a wide range of developers." %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Start Section -->
+    <section class="quickstart-section section-padding" id="quickstart">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{% trans "Quick Start Guide" %}</h2>
+                <p class="section-description">
+                    {% trans "Get started with Django in just a few steps. Our comprehensive courses will guide you through everything you need to know." %}
+                </p>
+            </div>
+            <div class="quickstart-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3>{% trans "Install Django" %}</h3>
+                    <p>{% trans "Learn how to set up Django on your system, create virtual environments, and install dependencies." %}</p>
+                    <a href="{% url 'course_list' %}" class="step-link">
+                        {% trans "Start Course" %} <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>{% trans "Create Your First Project" %}</h3>
+                    <p>{% trans "Set up your first Django project, understand the project structure, and run the development server." %}</p>
+                    <a href="{% url 'course_list' %}" class="step-link">
+                        {% trans "Start Course" %} <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>{% trans "Build Models & Views" %}</h3>
+                    <p>{% trans "Create database models, build views, configure URLs, and understand Django's MVT architecture." %}</p>
+                    <a href="{% url 'course_list' %}" class="step-link">
+                        {% trans "Start Course" %} <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>{% trans "Deploy Your App" %}</h3>
+                    <p>{% trans "Learn how to deploy your Django application to production servers and make it accessible to the world." %}</p>
+                    <a href="{% url 'course_list' %}" class="step-link">
+                        {% trans "Start Course" %} <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section section-padding" id="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">{% trans "Ready to Start Your Django Journey?" %}</h2>
+                <p class="cta-description">
+                    {% trans "Join thousands of developers learning Django. Master the framework that powers some of the world's most popular websites." %}
+                </p>
+                <div class="cta-buttons">
+                    <a href="{% url 'course_list' %}" class="btn btn-primary btn-large">
+                        <span>{% trans "Explore Courses" %}</span>
+                        <i class="fas fa-book-open"></i>
+                    </a>
+                    <a href="#hero" class="btn btn-secondary btn-large">
+                        <span>{% trans "Learn More" %}</span>
+                        <i class="fas fa-info-circle"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/landing.js' %}"></script>
+{% endblock %}
+
+
+

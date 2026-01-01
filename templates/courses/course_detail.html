@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load course_filters %}
+
+{% block title %}{{ course.get_title|default:course.title_en }} - Django Master{% endblock %}
+
+{% block content %}
+<div class="course-detail-page">
+    <div class="container">
+        <div class="course-header">
+            <a href="{% url 'course_list' %}" class="back-link" aria-label="{% trans 'Back to courses' %}">
+                <i class="fas fa-arrow-left" aria-hidden="true"></i> 
+                <span>{% trans "Back to Courses" %}</span>
+            </a>
+            <h1>{{ course|get_translated:lang }}</h1>
+            <p class="course-description">{% if lang == 'fa' %}{{ course.description_fa }}{% else %}{{ course.description_en }}{% endif %}</p>
+        </div>
+
+        <div class="sections-list">
+            {% for section in sections %}
+            <article class="section-card" aria-labelledby="section-{{ section.id }}">
+                <div class="section-header">
+                    <h2 id="section-{{ section.id }}">
+                        <i class="fas fa-folder-open" aria-hidden="true"></i>
+                        {{ section|get_translated:lang }}
+                    </h2>
+                    <span class="lesson-count" aria-label="{% trans 'Number of lessons' %}">
+                        <i class="fas fa-book" aria-hidden="true"></i>
+                        {{ section.lessons.count }} {% trans "lessons" %}
+                    </span>
+                </div>
+                {% if section.get_description|default:section.description_en %}
+                {% if lang == 'fa' and section.description_fa or lang == 'en' and section.description_en %}
+                <p class="section-description">{% if lang == 'fa' %}{{ section.description_fa|truncatewords:20 }}{% else %}{{ section.description_en|truncatewords:20 }}{% endif %}</p>
+                {% endif %}
+                {% endif %}
+                <div class="lessons-preview">
+                    {% for lesson in section.lessons.all|slice:":3" %}
+                    <a href="{% url 'lesson_detail' course.slug section.slug lesson.slug %}" class="lesson-link" aria-label="{% trans 'Go to lesson' %}: {{ lesson|get_translated:lang }}">
+                        <i class="fas fa-play-circle" aria-hidden="true"></i>
+                        <span>{{ lesson|get_translated:lang }}</span>
+                    </a>
+                    {% endfor %}
+                    {% if section.lessons.count > 3 %}
+                    <a href="{% url 'course_detail' course.slug %}#section-{{ section.id }}" class="more-lessons-link">
+                        <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
+                        <span>+{{ section.lessons.count|add:"-3" }} {% trans "more lessons" %}</span>
+                    </a>
+                    {% endif %}
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+

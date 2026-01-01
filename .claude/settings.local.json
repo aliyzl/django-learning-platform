@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc:*)",
+      "Bash(grep:*)",
+      "Bash(cat:*)",
+      "Bash(python manage.py makemigrations:*)",
+      "Bash(python3:*)",
+      "Bash(source:*)",
+      "Bash(curl:*)"
+    ]
+  }
+}

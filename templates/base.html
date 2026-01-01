@@ -1,0 +1,151 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="{{ lang|default:'en' }}" dir="{% if lang == 'fa' %}rtl{% else %}ltr{% endif %}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Django Learning Platform{% endblock %}</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CodeMirror -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body class="{% if lang == 'fa' %}rtl{% endif %}">
+    <!-- Skip to Content Link (Accessibility) -->
+    <a href="#main-content" class="skip-to-content" style="display:none;">{% trans "Skip to main content" %}</a>
+
+    <!-- Page Loading Overlay -->
+    <div id="page-loader" class="page-loader hidden"
+        style="position: fixed; inset: 0; background: var(--bg-color); z-index: 9999; display: none; justify-content: center; align-items: center; transition: opacity 0.5s ease;">
+        <div class="loader-content" style="text-align: center;">
+            <div class="spinner-ring"
+                style="width: 50px; height: 50px; border: 4px solid var(--primary-soft); border-top-color: var(--primary-color); border-radius: 50%; animation: spin 1s linear infinite;">
+            </div>
+        </div>
+    </div>
+    <style>
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        /* Ensure loader is hidden by default and can be controlled by JavaScript */
+        #page-loader.hidden {
+            display: none !important;
+        }
+        #page-loader:not(.hidden) {
+            display: flex !important;
+        }
+    </style>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="{% trans 'Main navigation' %}">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="{% url 'home' %}" aria-label="{% trans 'Django Master Home' %}">
+                    <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                    <span>Django Master</span>
+                </a>
+            </div>
+
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="{% trans 'Toggle menu' %}"
+                aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-menu" id="nav-menu">
+                <a href="{% url 'course_list' %}"
+                    class="nav-link {% if request.resolver_match.url_name == 'course_list' %}active{% endif %}">
+                    <i class="fas fa-book" aria-hidden="true"></i>
+                    <span>{% trans "Courses" %}</span>
+                </a>
+
+                <!-- Language Switcher -->
+                <div class="language-switcher"
+                    style="display: flex; gap: 4px; background: var(--bg-tertiary); padding: 4px; border-radius: var(--radius);">
+                    <button class="lang-btn {% if lang == 'en' %}active{% endif %}" onclick="switchLanguage('en')"
+                        style="border:none; padding: 4px 8px; border-radius: 4px; cursor: pointer; background: {% if lang == 'en' %}var(--bg-color){% else %}transparent{% endif %}; color: var(--text-color); box-shadow: {% if lang == 'en' %}var(--shadow-sm){% else %}none{% endif %};">
+                        EN
+                    </button>
+                    <button class="lang-btn {% if lang == 'fa' %}active{% endif %}" onclick="switchLanguage('fa')"
+                        style="border:none; padding: 4px 8px; border-radius: 4px; cursor: pointer; background: {% if lang == 'fa' %}var(--bg-color){% else %}transparent{% endif %}; color: var(--text-color); box-shadow: {% if lang == 'fa' %}var(--shadow-sm){% else %}none{% endif %};">
+                        FA
+                    </button>
+                </div>
+
+                <!-- Theme Toggle -->
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="{% trans 'Toggle theme' %}"
+                    style="background: transparent; border: none; color: var(--text-color); cursor: pointer; font-size: 1.25rem; padding: 0.5rem;">
+                    <i class="fas fa-moon" id="theme-icon" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content" role="main" style="min-height: calc(100vh - 160px);">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Simple Footer -->
+    <footer
+        style="background: var(--bg-card); padding: var(--space-8) 0; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-secondary); margin-top: auto;">
+        <div class="container">
+            <p>&copy; {% now "Y" %} Django Master. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Enhanced AI Chat Widget -->
+    <div id="ai-chat-widget" class="ai-chat-widget">
+        <button class="chat-toggle" onclick="toggleChat()" aria-label="{% trans 'Open AI chat' %}" aria-expanded="false"
+            id="chat-toggle-btn">
+            <i class="fas fa-robot" aria-hidden="true"></i>
+        </button>
+        <div class="chat-container" id="chat-container" role="dialog" aria-labelledby="chat-title" aria-modal="true">
+            <div class="chat-header">
+                <h3 id="chat-title">{% trans "AI Assistant" %}</h3>
+                <button class="chat-close" onclick="toggleChat()" aria-label="{% trans 'Close chat' %}">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="chat-messages" id="chat-messages" role="log" aria-live="polite" aria-atomic="false"></div>
+            <div class="chat-input-container">
+                <input type="text" id="chat-input" placeholder="{% trans 'Ask a question...' %}"
+                    onkeypress="handleChatKeyPress(event)" aria-label="{% trans 'Chat input' %}">
+                <button onclick="sendChatMessage()" aria-label="{% trans 'Send message' %}">
+                    <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/django/django.min.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/ai-chat.js' %}"></script>
+
+    {% block extra_js %}{% endblock %}
+</body>
+
+</html>

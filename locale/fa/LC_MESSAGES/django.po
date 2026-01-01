@@ -1,0 +1,705 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-28 22:43+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: courses/models.py:10 templates/courses/course_list.html:122
+msgid "All Platforms"
+msgstr ""
+
+#: courses/models.py:11
+msgid "Mac"
+msgstr ""
+
+#: courses/models.py:12
+msgid "Windows"
+msgstr ""
+
+#: courses/models.py:15 courses/models.py:50 courses/models.py:86
+msgid "Title (English)"
+msgstr ""
+
+#: courses/models.py:16 courses/models.py:51 courses/models.py:87
+msgid "Title (Persian)"
+msgstr ""
+
+#: courses/models.py:17 courses/models.py:52
+msgid "Description (English)"
+msgstr ""
+
+#: courses/models.py:18 courses/models.py:53
+msgid "Description (Persian)"
+msgstr ""
+
+#: courses/models.py:20
+msgid "Platform"
+msgstr ""
+
+#: courses/models.py:28 templates/courses/lesson_detail.html:164
+msgid "Course"
+msgstr ""
+
+#: courses/models.py:29 templates/base.html:79
+#: templates/courses/course_list.html:5 templates/courses/course_list.html:22
+#: templates/courses/lesson_detail.html:16 templates/landing.html:35
+msgid "Courses"
+msgstr "دوره‌ها"
+
+#: courses/models.py:62
+msgid "Section"
+msgstr "بخش"
+
+#: courses/models.py:63 templates/landing.html:42
+msgid "Sections"
+msgstr "سرفصل‌ها"
+
+#: courses/models.py:80
+msgid "Text"
+msgstr "متن"
+
+#: courses/models.py:81 courses/models.py:90
+#: templates/courses/lesson_detail.html:58
+msgid "Code Example"
+msgstr "مثال کد"
+
+#: courses/models.py:82 templates/courses/lesson_detail.html:93
+msgid "Exercise"
+msgstr "تمرین"
+
+#: courses/models.py:88
+msgid "Content (English)"
+msgstr "محتوای (انگلیسی)"
+
+#: courses/models.py:89
+msgid "Content (Persian)"
+msgstr "محتوای (فارسی)"
+
+#: courses/models.py:91
+msgid "Windows Code Example"
+msgstr "مثال کد ویندوز"
+
+#: courses/models.py:92
+msgid "Mac Code Example"
+msgstr "مثال کد مک"
+
+#: courses/models.py:93
+msgid "Exercise (English)"
+msgstr "تمرین (انگلیسی)"
+
+#: courses/models.py:94
+msgid "Exercise (Persian)"
+msgstr "تمرین (فارسی)"
+
+#: courses/models.py:95
+msgid "Exercise Solution"
+msgstr "راه‌حل تمرین"
+
+#: courses/models.py:105
+msgid "Lesson"
+msgstr "درس"
+
+#: courses/models.py:106 templates/courses/lesson_detail.html:177
+#: templates/landing.html:49
+msgid "Lessons"
+msgstr "درس‌ها"
+
+#: courses/models.py:150 courses/models.py:151
+msgid "User Progress"
+msgstr ""
+
+#: templates/base.html:32
+msgid "Skip to main content"
+msgstr ""
+
+#: templates/base.html:59
+msgid "Main navigation"
+msgstr ""
+
+#: templates/base.html:62
+msgid "Django Master Home"
+msgstr ""
+
+#: templates/base.html:68
+msgid "Toggle menu"
+msgstr ""
+
+#: templates/base.html:96
+msgid "Toggle theme"
+msgstr ""
+
+#: templates/base.html:119
+msgid "Open AI chat"
+msgstr ""
+
+#: templates/base.html:125
+msgid "AI Assistant"
+msgstr "دستیار هوشمند"
+
+#: templates/base.html:126
+msgid "Close chat"
+msgstr ""
+
+#: templates/base.html:132
+msgid "Ask a question..."
+msgstr "سوالی بپرسید..."
+
+#: templates/base.html:133
+msgid "Chat input"
+msgstr ""
+
+#: templates/base.html:134
+msgid "Send message"
+msgstr "ارسال پیام"
+
+#: templates/courses/course_detail.html:11
+msgid "Back to courses"
+msgstr ""
+
+#: templates/courses/course_detail.html:13
+msgid "Back to Courses"
+msgstr ""
+
+#: templates/courses/course_detail.html:27
+msgid "Number of lessons"
+msgstr ""
+
+#: templates/courses/course_detail.html:29
+msgid "lessons"
+msgstr ""
+
+#: templates/courses/course_detail.html:39
+msgid "Go to lesson"
+msgstr ""
+
+#: templates/courses/course_detail.html:47
+msgid "more lessons"
+msgstr ""
+
+#: templates/courses/course_list.html:14
+msgid "Django Learning Platform"
+msgstr "پلتفرم آموزش Django"
+
+#: templates/courses/course_list.html:15
+msgid "Master Django Web Development for Windows & Mac"
+msgstr "تسلط بر توسعه وب Django برای Windows و Mac"
+
+#: templates/courses/course_list.html:27
+msgid "Multi-Platform"
+msgstr "چند پلتفرمی"
+
+#: templates/courses/course_list.html:28
+msgid "Windows & Mac"
+msgstr "Windows و Mac"
+
+#: templates/courses/course_list.html:46
+msgid "Mac Courses"
+msgstr "دوره‌های Mac"
+
+#: templates/courses/course_list.html:47
+msgid "Optimized for macOS environment"
+msgstr "بهینه شده برای محیط macOS"
+
+#: templates/courses/course_list.html:65 templates/courses/course_list.html:103
+#: templates/courses/course_list.html:140
+msgid "Start Learning"
+msgstr "شروع یادگیری"
+
+#: templates/courses/course_list.html:84
+msgid "Windows Courses"
+msgstr "دوره‌های Windows"
+
+#: templates/courses/course_list.html:85
+msgid "Optimized for Windows environment"
+msgstr "بهینه شده برای محیط Windows"
+
+#: templates/courses/course_list.html:123
+msgid "Universal Django courses"
+msgstr "دوره‌های Django عمومی"
+
+#: templates/courses/course_list.html:155
+msgid "No courses available yet."
+msgstr "هنوز دوره‌ای در دسترس نیست."
+
+#: templates/courses/course_list.html:156
+msgid "Check back soon for new content!"
+msgstr "به زودی برای محتوای جدید بازگردید!"
+
+#: templates/courses/lesson_detail.html:11
+msgid "Breadcrumb navigation"
+msgstr ""
+
+#: templates/courses/lesson_detail.html:39
+msgid "Completed"
+msgstr ""
+
+#: templates/courses/lesson_detail.html:41
+msgid "In Progress"
+msgstr ""
+
+#: templates/courses/lesson_detail.html:63
+msgid "Default"
+msgstr ""
+
+#: templates/courses/lesson_detail.html:100
+msgid "Write your solution here..."
+msgstr ""
+
+#: templates/courses/lesson_detail.html:104
+msgid "Check Solution"
+msgstr ""
+
+#: templates/courses/lesson_detail.html:107
+msgid "Show Solution"
+msgstr ""
+
+#: templates/courses/lesson_detail.html:113
+msgid "Solution"
+msgstr ""
+
+#: templates/courses/lesson_detail.html:122
+msgid "Lesson navigation"
+msgstr ""
+
+#: templates/courses/lesson_detail.html:126
+msgid "Previous lesson"
+msgstr ""
+
+#: templates/courses/lesson_detail.html:132
+msgid "Previous"
+msgstr ""
+
+#: templates/courses/lesson_detail.html:142
+msgid "Next lesson"
+msgstr ""
+
+#: templates/courses/lesson_detail.html:146
+msgid "Next"
+msgstr ""
+
+#: templates/landing.html:4
+msgid "Learn Django Framework - Complete Guide"
+msgstr "آموزش فریمورک Django - راهنمای کامل"
+
+#: templates/landing.html:21
+msgid "Python Web Framework"
+msgstr "فریمورک وب پایتون"
+
+#: templates/landing.html:24
+msgid "Master Django Framework"
+msgstr "تسلط بر فریمورک Django"
+
+#: templates/landing.html:27
+msgid ""
+"The high-level Python web framework that encourages rapid development and "
+"clean, pragmatic design. Learn Django from scratch and build powerful web "
+"applications."
+msgstr ""
+"فریمورک وب پایتون سطح بالا که توسعه سریع و طراحی پاک و عملی را تشویق می‌کند. "
+"Django را از ابتدا بیاموزید و برنامه‌های وب قدرتمند بسازید."
+
+#: templates/landing.html:54
+msgid "Start Learning Now"
+msgstr "همین حالا شروع کنید"
+
+#: templates/landing.html:58
+msgid "Explore Architecture"
+msgstr "بررسی معماری"
+
+#: templates/landing.html:73
+msgid "What is Django?"
+msgstr "Django چیست؟"
+
+#: templates/landing.html:75
+msgid ""
+"Django is a high-level Python web framework that enables rapid development "
+"of secure and maintainable websites. Built by experienced developers, Django "
+"takes care of much of the hassle of web development, so you can focus on "
+"writing your app without needing to reinvent the wheel."
+msgstr ""
+"Django یک فریمورک وب پایتون سطح بالا است که توسعه سریع وب‌سایت‌های امن و قابل "
+"نگهداری را امکان‌پذیر می‌کند. ساخته شده توسط توسعه‌دهندگان با تجربه، Django "
+"بسیاری از مشکلات توسعه وب را برطرف می‌کند، بنابراین می‌توانید روی نوشتن "
+"برنامه خود تمرکز کنید بدون نیاز به اختراع دوباره چرخ."
+
+#: templates/landing.html:83
+msgid "Batteries Included"
+msgstr "امکانات کامل (Batteries Included)"
+
+#: templates/landing.html:84
+msgid ""
+"Django includes dozens of extras you can use to handle common web "
+"development tasks, from user authentication to RSS feeds."
+msgstr ""
+"Django شامل ده‌ها ویژگی اضافی است که می‌توانید برای انجام کارهای رایج توسعه وب "
+"استفاده کنید، از احراز هویت کاربر تا خوراک RSS."
+
+#: templates/landing.html:90
+msgid "Security First"
+msgstr "امنیت در اولویت"
+
+#: templates/landing.html:91
+msgid ""
+"Django helps developers avoid many common security mistakes by providing a "
+"framework that has been engineered to 'do the right things' to protect the "
+"website automatically."
+msgstr ""
+"Django به توسعه‌دهندگان کمک می‌کند تا از بسیاری از اشتباهات رایج امنیتی جلوگیری "
+"کنند با ارائه فریمورکی که برای انجام «کارهای درست» برای محافظت خودکار از "
+"وب‌سایت طراحی شده است."
+
+#: templates/landing.html:97
+msgid "Scalable"
+msgstr "مقیاس‌پذیر"
+
+#: templates/landing.html:98
+msgid ""
+"Some of the busiest sites on the web leverage Django's ability to quickly "
+"and flexibly scale to meet the heaviest traffic demands."
+msgstr ""
+"برخی از شلوغ‌ترین سایت‌های وب از قابلیت Django برای مقیاس‌پذیری سریع و انعطاف‌پذیر "
+"برای پاسخ به سنگین‌ترین درخواست‌های ترافیکی استفاده می‌کنند."
+
+#: templates/landing.html:104
+msgid "Thriving Community"
+msgstr "جامعه کاربری پویا"
+
+#: templates/landing.html:105
+msgid ""
+"Django has a large and active community with extensive documentation, "
+"packages, and support for developers of all levels."
+msgstr ""
+"Django دارای جامعه بزرگ و فعالی است با مستندات گسترده، پکیج‌ها و پشتیبانی برای "
+"توسعه‌دهندگان در تمام سطوح."
+
+#: templates/landing.html:115
+msgid "Django Architecture"
+msgstr "معماری Django"
+
+#: templates/landing.html:117
+msgid ""
+"Django follows the Model-View-Template (MVT) architectural pattern. Click on "
+"each component below to learn more about how Django handles requests and "
+"responses."
+msgstr ""
+"Django از الگوی معماری Model-View-Template (MVT) پیروی می‌کند. روی هر یک از "
+"اجزا زیر کلیک کنید تا بیشتر در مورد نحوه مدیریت درخواست‌ها و پاسخ‌ها توسط Django "
+"بیاموزید."
+
+#: templates/landing.html:124
+msgid "HTTP Request"
+msgstr "درخواست HTTP"
+
+#: templates/landing.html:132 templates/landing.html:268
+msgid "URL Routing"
+msgstr "مسیریابی URL"
+
+#: templates/landing.html:133
+msgid "URL Configuration"
+msgstr "پیکربندی URL"
+
+#: templates/landing.html:143
+msgid "Middleware"
+msgstr "میان‌افزار"
+
+#: templates/landing.html:144
+msgid "Request Processing"
+msgstr "پردازش درخواست"
+
+#: templates/landing.html:154
+msgid "Views"
+msgstr "Viewها"
+
+#: templates/landing.html:155
+msgid "Business Logic"
+msgstr "منطق کسب‌وکار"
+
+#: templates/landing.html:165
+msgid "Models"
+msgstr "مدل‌ها"
+
+#: templates/landing.html:166
+msgid "ORM & Database"
+msgstr "ORM و پایگاه داده"
+
+#: templates/landing.html:176
+msgid "Templates"
+msgstr "قالب‌ها"
+
+#: templates/landing.html:177
+msgid "Presentation Layer"
+msgstr "لایه نمایش"
+
+#: templates/landing.html:187 templates/landing.html:233
+msgid "Admin Interface"
+msgstr "پنل مدیریت"
+
+#: templates/landing.html:188
+msgid "Auto-Generated Admin"
+msgstr "مدیریت خودکار تولید شده"
+
+#: templates/landing.html:192
+msgid "HTTP Response"
+msgstr "پاسخ HTTP"
+
+#: templates/landing.html:216
+msgid "Key Features"
+msgstr "ویژگی‌های کلیدی"
+
+#: templates/landing.html:218
+msgid ""
+"Django provides a comprehensive set of features that make web development "
+"efficient and enjoyable."
+msgstr ""
+"Django مجموعه جامعی از ویژگی‌ها را فراهم می‌کند که توسعه وب را کارآمد و لذت‌بخش "
+"می‌کند."
+
+#: templates/landing.html:226
+msgid "ORM"
+msgstr "ORM"
+
+#: templates/landing.html:227
+msgid ""
+"Object-Relational Mapping allows you to interact with databases using Python "
+"code instead of SQL. Define models and Django handles the database "
+"operations."
+msgstr ""
+"Object-Relational Mapping به شما امکان می‌دهد با استفاده از کد Python به جای SQL "
+"با پایگاه داده تعامل کنید. مدل‌ها را تعریف کنید و Django عملیات پایگاه داده را "
+"مدیریت می‌کند."
+
+#: templates/landing.html:234
+msgid ""
+"Django automatically generates a production-ready admin interface for your "
+"models, allowing you to manage content without writing any additional code."
+msgstr ""
+"Django به طور خودکار یک رابط مدیریت آماده تولید برای مدل‌های شما ایجاد می‌کند و "
+"به شما امکان می‌دهد بدون نوشتن کد اضافی محتوا را مدیریت کنید."
+
+#: templates/landing.html:240
+msgid "Authentication & Authorization"
+msgstr "احراز هویت و مجوز"
+
+#: templates/landing.html:241
+msgid ""
+"Built-in user authentication system handles user accounts, groups, "
+"permissions, and cookie-based user sessions out of the box."
+msgstr ""
+"سیستم احراز هویت کاربر داخلی، حساب‌های کاربری، گروه‌ها، مجوزها و جلسات کاربری مبتنی "
+"بر کوکی را به صورت پیش‌فرض مدیریت می‌کند."
+
+#: templates/landing.html:247
+msgid "Security Features"
+msgstr "ویژگی‌های امنیتی"
+
+#: templates/landing.html:248
+msgid ""
+"Protection against SQL injection, XSS attacks, CSRF, clickjacking, and other "
+"common security vulnerabilities is built-in."
+msgstr ""
+"محافظت در برابر تزریق SQL، حملات XSS، CSRF، کلیک‌جکینگ و سایر آسیب‌پذیری‌های "
+"رایج امنیتی به صورت داخلی موجود است."
+
+#: templates/landing.html:254
+msgid "Scalability"
+msgstr "مقیاس‌پذیری"
+
+#: templates/landing.html:255
+msgid ""
+"Django is designed to help developers take applications from concept to "
+"completion as quickly as possible, and scale to handle high traffic."
+msgstr ""
+"Django طراحی شده است تا به توسعه‌دهندگان کمک کند برنامه‌ها را از مفهوم تا تکمیل در "
+"کوتاه‌ترین زمان ممکن برسانند و برای مدیریت ترافیک بالا مقیاس‌پذیری داشته باشند."
+
+#: templates/landing.html:261
+msgid "Template Engine"
+msgstr "موتور قالب"
+
+#: templates/landing.html:262
+msgid ""
+"Powerful template system that allows you to separate design from code, "
+"making it easy to create dynamic HTML pages."
+msgstr ""
+"سیستم قالب قدرتمند که به شما امکان می‌دهد طراحی را از کد جدا کنید و ایجاد صفحات "
+"HTML پویا را آسان می‌کند."
+
+#: templates/landing.html:269
+msgid ""
+"Clean, elegant URL scheme is an important detail in a high-quality web "
+"application. Django encourages beautiful URL design."
+msgstr ""
+"طرح URL تمیز و ظریف جزئیات مهمی در یک برنامه وب با کیفیت است. Django طراحی URL "
+"زیبا را تشویق می‌کند."
+
+#: templates/landing.html:275
+msgid "Extensibility"
+msgstr "قابلیت توسعه"
+
+#: templates/landing.html:276
+msgid ""
+"Django's app architecture allows you to build reusable apps and leverage "
+"thousands of third-party packages from the Django ecosystem."
+msgstr ""
+"معماری اپلیکیشن Django به شما امکان می‌دهد برنامه‌های قابل استفاده مجدد بسازید و "
+"از هزاران پکیج شخص ثالث از اکوسیستم Django استفاده کنید."
+
+#: templates/landing.html:286
+msgid "Why Learn Django?"
+msgstr "چرا Django بیاموزیم؟"
+
+#: templates/landing.html:288
+msgid ""
+"Django is one of the most popular and in-demand web frameworks in the "
+"industry. Here's why it's worth learning."
+msgstr ""
+"Django یکی از محبوب‌ترین و پرتقاضاترین فریمورک‌های وب در صنعت است. در اینجا دلایل "
+"ارزشمند بودن یادگیری آن آمده است."
+
+#: templates/landing.html:295
+msgid "Industry Standard"
+msgstr "استاندارد صنعتی"
+
+#: templates/landing.html:296
+msgid ""
+"Used by major companies like Instagram, Spotify, Pinterest, and The "
+"Washington Post. Django powers some of the world's largest websites."
+msgstr ""
+"استفاده شده توسط شرکت‌های بزرگی مانند Instagram، Spotify، Pinterest و The "
+"Washington Post. Django برخی از بزرگ‌ترین وب‌سایت‌های جهان را به حرکت درمی‌آورد."
+
+#: templates/landing.html:302
+msgid "Career Opportunities"
+msgstr "فرصت‌های شغلی"
+
+#: templates/landing.html:303
+msgid ""
+"Django developers are in high demand. Learning Django opens up numerous job "
+"opportunities in web development, backend engineering, and full-stack "
+"development."
+msgstr ""
+"توسعه‌دهندگان Django تقاضای بالایی دارند. یادگیری Django فرصت‌های شغلی متعددی در "
+"توسعه وب، مهندسی بک‌اند و توسعه فول‌استک باز می‌کند."
+
+#: templates/landing.html:309
+msgid "Rapid Development"
+msgstr "توسعه سریع"
+
+#: templates/landing.html:310
+msgid ""
+"Django's 'batteries included' philosophy means you can build production-"
+"ready applications faster than with many other frameworks."
+msgstr ""
+"فلسفه 'همه چیز آماده است' Django به این معنی است که می‌توانید برنامه‌های آماده "
+"تولید را سریع‌تر از بسیاری از فریمورک‌های دیگر بسازید."
+
+#: templates/landing.html:316
+msgid "Python Ecosystem"
+msgstr "اکوسیستم Python"
+
+#: templates/landing.html:317
+msgid ""
+"Built on Python, one of the most popular and beginner-friendly programming "
+"languages, making it accessible to a wide range of developers."
+msgstr ""
+"ساخته شده بر اساس Python، یکی از محبوب‌ترین و مناسب‌ترین زبان‌های برنامه‌نویسی برای "
+"مبتدیان، که آن را در دسترس طیف وسیعی از توسعه‌دهندگان قرار می‌دهد."
+
+#: templates/landing.html:328
+msgid "Quick Start Guide"
+msgstr "راهنمای شروع سریع"
+
+#: templates/landing.html:330
+msgid ""
+"Get started with Django in just a few steps. Our comprehensive courses will "
+"guide you through everything you need to know."
+msgstr ""
+"فقط در چند قدم با Django شروع کنید. دوره‌های جامع ما شما را در تمام آنچه نیاز "
+"دارید راهنمایی می‌کند."
+
+#: templates/landing.html:339
+msgid "Install Django"
+msgstr "نصب Django"
+
+#: templates/landing.html:340
+msgid ""
+"Learn how to set up Django on your system, create virtual environments, and "
+"install dependencies."
+msgstr ""
+"بیاموزید که چگونه Django را روی سیستم خود راه‌اندازی کنید، محیط‌های مجازی ایجاد "
+"کنید و وابستگی‌ها را نصب کنید."
+
+#: templates/landing.html:342 templates/landing.html:353
+#: templates/landing.html:364 templates/landing.html:375
+msgid "Start Course"
+msgstr "شروع دوره"
+
+#: templates/landing.html:350
+msgid "Create Your First Project"
+msgstr "ایجاد اولین پروژه شما"
+
+#: templates/landing.html:351
+msgid ""
+"Set up your first Django project, understand the project structure, and run "
+"the development server."
+msgstr ""
+"اولین پروژه Django خود را راه‌اندازی کنید، ساختار پروژه را درک کنید و سرور توسعه "
+"را اجرا کنید."
+
+#: templates/landing.html:361
+msgid "Build Models & Views"
+msgstr "ساخت مدل‌ها و Viewها"
+
+#: templates/landing.html:362
+msgid ""
+"Create database models, build views, configure URLs, and understand Django's "
+"MVT architecture."
+msgstr ""
+"مدل‌های پایگاه داده ایجاد کنید، viewها بسازید، URLها را پیکربندی کنید و معماری MVT "
+"Django را درک کنید."
+
+#: templates/landing.html:372
+msgid "Deploy Your App"
+msgstr "استقرار برنامه شما"
+
+#: templates/landing.html:373
+msgid ""
+"Learn how to deploy your Django application to production servers and make "
+"it accessible to the world."
+msgstr ""
+"بیاموزید که چگونه برنامه Django خود را روی سرورهای تولید استقرار دهید و آن را در "
+"دسترس جهان قرار دهید."
+
+#: templates/landing.html:386
+msgid "Ready to Start Your Django Journey?"
+msgstr "آماده شروع سفر Django خود هستید؟"
+
+#: templates/landing.html:388
+msgid ""
+"Join thousands of developers learning Django. Master the framework that "
+"powers some of the world's most popular websites."
+msgstr ""
+"به هزاران توسعه‌دهنده‌ای که Django می‌آموزند بپیوندید. بر فریمورکی که برخی از "
+"محبوب‌ترین وب‌سایت‌های جهان را به حرکت درمی‌آورد تسلط پیدا کنید."
+
+#: templates/landing.html:392
+msgid "Explore Courses"
+msgstr "کشف دوره‌ها"
+
+#: templates/landing.html:396
+msgid "Learn More"
+msgstr "بیشتر بیاموزید"
